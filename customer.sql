@@ -1,0 +1,45 @@
+--------------------------------------------------------
+--  File created - Saturday-November-20-2021   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table CUSTOMER
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."CUSTOMER" 
+   (	"ID" NUMBER(11,0), 
+	"FIRST_NAME" VARCHAR2(45 BYTE), 
+	"LAST_NAME" VARCHAR2(45 BYTE), 
+	"EMAIL" VARCHAR2(45 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.CUSTOMER
+SET DEFINE OFF;
+Insert into SYSTEM.CUSTOMER (ID,FIRST_NAME,LAST_NAME,EMAIL) values (1,'Zika','Zivkovic','zika@gmail.com');
+Insert into SYSTEM.CUSTOMER (ID,FIRST_NAME,LAST_NAME,EMAIL) values (2,'Mika','Mikic','mika@gmail.com');
+Insert into SYSTEM.CUSTOMER (ID,FIRST_NAME,LAST_NAME,EMAIL) values (3,'Pera','Peric','pera@test.com');
+Insert into SYSTEM.CUSTOMER (ID,FIRST_NAME,LAST_NAME,EMAIL) values (4,'Pera','Peric','pera@test.com');
+Insert into SYSTEM.CUSTOMER (ID,FIRST_NAME,LAST_NAME,EMAIL) values (61,'joca','jocic','joca@test.com');
+--------------------------------------------------------
+--  DDL for Index SYS_C008344
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."SYS_C008344" ON "SYSTEM"."CUSTOMER" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."CUSTOMER" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
